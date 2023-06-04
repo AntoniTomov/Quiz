@@ -1,0 +1,16 @@
+<ng-container *ngIf="selectedAnswer$ | async as selectedAnswer">
+  <div class="p-20">
+    <h1 *ngIf="selectedAnswer.validity; else wrongAnswer"
+      class="answer-correct">
+      CORRECT!!!
+    </h1>
+    <ng-template #wrongAnswer>
+      <h2 class="answer-incorrect">
+        Incorrect.
+      </h2>
+    </ng-template>
+    <div class="pb-12">Your score is: {{ score }}</div>
+    <button class="btn btn-primary" routerLink="../">Go back to
+      questionnaire</button>
+  </div>
+</ng-container>

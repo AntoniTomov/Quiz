@@ -1,0 +1,14 @@
+<div class="question">
+  <h1>
+    {{ question.question.text }}
+  </h1>
+  <div *ngFor="let answer of answers; let i = index" class="answer">
+    <input type="radio" [id]="answer" name="fav_language" value="answer"
+      (change)="goToConfirmationDialog(answer)">
+    <label [for]="answer">{{ answer }}</label>
+  </div>
+  <div *ngIf="openDialog" class="warning-msg">
+    You already answered this question.
+    <button (click)="openDialog = false">OK</button>
+  </div>
+</div>

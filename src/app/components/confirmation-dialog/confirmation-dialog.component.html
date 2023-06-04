@@ -1,0 +1,15 @@
+<ng-container *ngIf="selectedAnswer$ | async as selectedAnswer">
+  <h2 class="confirmation-dialog p-20">
+    <header class="pb-6">
+      Your choice is: {{ selectedAnswer.value }}
+    </header>
+    <section class="pb-12">
+      Is this your final answer?
+    </section>
+    <button class="btn btn-primary me-12"
+      (click)="validateAnswer(selectedAnswer)"
+      routerLink="/feedback">Yes</button>
+    <button class="btn btn-primary" routerLink="../">No, go
+      back</button>
+  </h2>
+</ng-container>
